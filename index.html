@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GymX - Home</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        /* Add CSS styles for the scrolling membership plans */
+        .membership-plans-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+        .membership-plan {
+            flex: 0 0 300px;
+            margin-right: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="gymx_logo.png" alt="GymX Logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <h1>Welcome to GymX</h1>
+            <p>GymX is your ultimate fitness destination, providing state-of-the-art equipment, expert trainers, and a supportive community.</p>
+            
+        </div>
+    </section>
+
+<section id="why-choose-gymx">
+        <div class="container">
+            <h2>Why Choose GymX</h2>
+            <p>At GymX, we strive to provide the best fitness experience for our members. Here's why we are the top choice for fitness enthusiasts:</p>
+
+            <h3>State-of-the-Art Facilities</h3>
+            <p>Our gym boasts state-of-the-art facilities equipped with the latest fitness equipment. From cutting-edge cardio machines to advanced strength training equipment, we have everything you need to maximize your workout and achieve remarkable results.</p>
+
+            <h3>Expert Trainers and Instructors</h3>
+            <p>Our team of expert trainers and instructors is dedicated to guiding and supporting you on your fitness journey. They are not only highly qualified but also passionate about helping you succeed. Whether you need personalized training or motivation during group classes, our trainers are here for you every step of the way.</p>
+
+            <h3>Diverse Fitness Programs</h3>
+            <p>We offer a diverse range of fitness programs tailored to suit all fitness levels and interests. From high-intensity workouts that challenge your limits to calming yoga sessions that promote mindfulness, we have classes that cater to various preferences and fitness goals.</p>
+
+            <h3>Inspiring Community</h3>
+            <p>When you join GymX, you become part of a supportive and inspiring community. Our members motivate and uplift each other, creating an environment that fosters growth and achievement. Whether you're a seasoned athlete or just starting your fitness journey, you'll find a welcoming community that makes you feel right at home.</p>
+
+            <h3>Flexible Membership Options</h3>
+            <p>We understand that every individual's fitness needs are unique. That's why we offer flexible membership options to accommodate your lifestyle. Choose from our various plans to find the one that suits you best.</p>
+        </div>
+    </section>
+
+    <section id="membership-plans">
+        <div class="container">
+            <h2>Membership Plans</h2>
+            <p>Choose the plan that fits your fitness goals and budget:</p>
+
+            <div class="membership-plans-container">
+                <!-- Membership Plan 1 -->
+                <div class="membership-plan">
+                    <h3>Basic Plan</h3>
+                    <p>Get access to our gym facilities during off-peak hours.</p>
+                    <p>Includes group fitness classes.</p>
+                    <p>No personal training sessions included.</p>
+                    <h4>Price: $29/month</h4>
+                </div>
+
+                <!-- Membership Plan 2 -->
+                <div class="membership-plan">
+                    <h3>Standard Plan</h3>
+                    <p>Enjoy unlimited access to our gym facilities.</p>
+                    <p>Includes group fitness classes and two personal training sessions per month.</p>
+                    <h4>Price: $49/month</h4>
+                </div>
+
+                <!-- Membership Plan 3 -->
+                <div class="membership-plan">
+                    <h3>Premium Plan</h3>
+                    <p>All the benefits of the Standard Plan.</p>
+                    <p>Additional access to our premium amenities, such as sauna and steam room.</p>
+                    <p>Four personal training sessions per month.</p>
+                    <h4>Price: $79/month</h4>
+                </div>
+
+                <!-- Membership Plan 4 -->
+                <div class="membership-plan">
+                    <h3>Ultimate Plan</h3>
+                    <p>Our most comprehensive plan for serious fitness enthusiasts.</p>
+                    <p>Unlimited access to all gym facilities, premium amenities, and group classes.</p>
+                    <p>Eight personal training sessions per month.</p>
+                    <h4>Price: $119/month</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 GymX. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot Button -->
+    <div class="chatbot-button">
+        <button id="open-chatbot" onclick="toggleChatbot()">Open Chatbot</button>
+    </div>
+
+    <!-- Chatbot Integration (Hidden by Default) -->
+    <div id="chatbot" style="display: none;">
+        <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+        <script src="https://mediafiles.botpress.cloud/afa1442f-3647-47ee-b09d-cfb0432b69e2/webchat/config.js" defer></script>
+    </div>
+
+    <script>
+        function toggleChatbot() {
+            var chatbotDiv = document.getElementById('chatbot');
+            chatbotDiv.style.display = chatbotDiv.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+
+    <script>
+        // JavaScript for scrolling the membership plans left and right
+        const container = document.querySelector('.membership-plans-container');
+        const plans = document.querySelectorAll('.membership-plan');
+
+        let scrollAmount = 0;
+        const scrollStep = 300;
+
+        function scrollToRight() {
+            scrollAmount += scrollStep;
+            scrollAmount = Math.min(scrollAmount, container.scrollWidth - container.clientWidth);
+            container.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+        }
+
+        function scrollToLeft() {
+            scrollAmount -= scrollStep;
+            scrollAmount = Math.max(scrollAmount, 0);
+            container.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
